@@ -1,14 +1,14 @@
 //
-//  AdditionQuestion.m
+//  SubtractionQuestion.m
 //  Maths
 //
 //  Created by Eric Gregor on 2018-01-17.
 //  Copyright © 2018 Eric Gregor. All rights reserved.
 //
 
-#import "AdditionQuestion.h"
+#import "SubtractionQuestion.h"
 
-@implementation AdditionQuestion
+@implementation SubtractionQuestion
 
 - (instancetype)init
 {
@@ -23,9 +23,9 @@
     NSInteger number1 = super.leftValue;
     NSInteger number2 = super.rightValue;
     
-    super.question = [NSString stringWithFormat:@"%@%@%@%@", [NSString stringWithFormat:@"%ld", number1],  @" + " ,[NSString stringWithFormat:@"%ld", number2], @" = ?"];
+    super.question = [NSString stringWithFormat:@"%@%@%@%@", [NSString stringWithFormat:@"%ld", number1],  @" - " ,[NSString stringWithFormat:@"%ld", number2], @" = ?"];
     
-    super.answer = number1 + number2;
+    super.answer = number1 - number2;
 }
 
 @end

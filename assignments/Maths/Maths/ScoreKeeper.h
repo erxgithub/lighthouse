@@ -13,6 +13,6 @@
 @property NSInteger rightCount;
 @property NSInteger wrongCount;
 
-- (void)printScore;
+- (NSString *)scoreOutput;
 
 @end

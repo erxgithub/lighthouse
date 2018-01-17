@@ -10,15 +10,20 @@
 #import "AdditionQuestion.h"
 #import "InputHandler.h"
 #import "ScoreKeeper.h"
+#import "QuestionManager.h"
+#import "QuestionFactory.h"
 
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
-        ScoreKeeper *score = [[ScoreKeeper alloc] init];
+        ScoreKeeper *scoreKeeper = [[ScoreKeeper alloc] init];
+        QuestionManager *questionManager = [[QuestionManager alloc] init];
+        QuestionFactory *questionFactory = [[QuestionFactory alloc] init];
         BOOL gameOn = YES;
         
         while (gameOn) {
-            AdditionQuestion *addQuestion = [[AdditionQuestion alloc] init];
-            NSLog(@"%@", addQuestion.question);
+            Question *question = [questionFactory generateRandomQuestion];
+            [questionManager.questions addObject:question];
+            NSLog(@"%@", question.question);
             
             NSString *inputString = [InputHandler getUserInput];
 
@@ -28,16 +33,18 @@ int main(int argc, const char * argv[]) {
 
             NSInteger inputNumber = [inputString intValue];
             
-            if (inputNumber == addQuestion.answer) {
-                score.rightCount++;
+            if (inputNumber == question.answer) {
+                scoreKeeper.rightCount++;
                 NSLog(@"Right!");
             } else {
-                score.wrongCount++;
+                scoreKeeper.wrongCount++;
                 NSLog(@"Wrong!");
             }
             
-            [score printScore];
-            
+            questionManager.totalTime += [question answerTime];
+
+            NSLog(@"%@", [scoreKeeper scoreOutput]);
+            NSLog(@"%@", [questionManager timeOutput]);
         }
     }
     

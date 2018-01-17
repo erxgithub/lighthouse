@@ -20,9 +20,12 @@
     return self;
 }
 
-- (void)printScore {
+- (NSString *)scoreOutput {
     NSInteger percent = (float)self.rightCount / ((float)self.rightCount + (float)self.wrongCount) * 100;
-    NSLog(@"score: %ld right, %ld wrong ---- %ld%%", (long)self.rightCount, (long)self.wrongCount, (long)percent);
+
+    NSString *output =  [NSString stringWithFormat:@"score: %ld right, %ld wrong ---- %ld%%", (long)self.rightCount, (long)self.wrongCount, (long)percent];
+    
+    return output;
 }
 
 @end
