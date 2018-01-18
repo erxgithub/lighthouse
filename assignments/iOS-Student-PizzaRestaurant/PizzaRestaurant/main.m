@@ -35,9 +35,16 @@ int main(int argc, const char * argv[])
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
             
             // And then send some message to the kitchen...
+            PizzaSize size = stringToSize(commandWords.firstObject);
+            
+            
+            Pizza *pizza = [[Pizza alloc] initWithOrder:commandWords];
+            NSLog(@"Pizza order: size %@, toppings %@", [pizza pizzaSize], [pizza pizzaToppings]);
+            NSLog(@"%@", pizza.size);
         }
 
     }
+    
     return 0;
 }
 
