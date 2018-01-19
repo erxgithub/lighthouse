@@ -13,7 +13,56 @@
 - (Pizza *)makePizzaWithSize:(NSString *)size toppings:(NSArray *)toppings
 {
     PizzaSize pizzaSize = [self sizeStringToSize:size];
-    return [[Pizza alloc] initWithSize:pizzaSize withToppings:toppings];
+
+    if (self.kitchenDelegate != nil) {
+        if (![self.kitchenDelegate kitchen:self shouldMakePizzaOfSize:pizzaSize andToppings:toppings]) {
+            return nil;
+        }
+        
+        if ([self.kitchenDelegate kitchenShouldUpgradeOrder:self]) {
+            pizzaSize = PizzaSizeLarge;
+        }
+        
+        
+    }
+ 
+    Pizza *pizza = [[Pizza alloc] initWithSize:pizzaSize withToppings:toppings];
+
+    if ([self.kitchenDelegate respondsToSelector:@selector(kitchenDidMakePizza:)]) {
+        [self.kitchenDelegate kitchenDidMakePizza:pizza];
+     }
+
+    return pizza;
+}
+
+- (BOOL)kitchen:(Kitchen *)kitchen shouldMakePizzaOfSize:(PizzaSize)size andToppings:(NSArray *)toppings {
+    int maxNumber = 1;
+    int minNumber = 0;
+    
+    NSInteger canProcess = arc4random_uniform(maxNumber - minNumber + 1) + minNumber;
+    
+    if (canProcess == 1) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (BOOL)kitchenShouldUpgradeOrder:(Kitchen *)kitchen {
+    int maxNumber = 1;
+    int minNumber = 0;
+    
+    NSInteger canProcess = arc4random_uniform(maxNumber - minNumber + 1) + minNumber;
+    
+    if (canProcess == 1) {
+        return YES;
+    } else {
+        return NO;
+    }
+}
+
+- (void)kitchenDidMakePizza:(Pizza *)pizza {
+
 }
 
 - (PizzaSize)sizeStringToSize:(NSString *)size {

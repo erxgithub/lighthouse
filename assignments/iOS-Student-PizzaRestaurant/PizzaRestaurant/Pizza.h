@@ -8,7 +8,11 @@
 
 #import <Foundation/Foundation.h>
 
-typedef NS_ENUM(NSInteger, PizzaSize) {PizzaSizeSmall, PizzaSizeMedium, PizzaSizeLarge};
+typedef NS_ENUM(NSInteger, PizzaSize) {
+    PizzaSizeSmall,
+    PizzaSizeMedium,
+    PizzaSizeLarge}
+;
 
 @interface Pizza : NSObject
 
