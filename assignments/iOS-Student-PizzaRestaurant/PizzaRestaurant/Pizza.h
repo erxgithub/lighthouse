@@ -12,12 +12,13 @@ typedef NS_ENUM(NSInteger, PizzaSize) {PizzaSizeSmall, PizzaSizeMedium, PizzaSiz
 
 @interface Pizza : NSObject
 
-@property (nonatomic, strong) NSString *size;
-@property (nonatomic) NSMutableArray *toppings;
+@property (nonatomic) PizzaSize size;
+@property (nonatomic) NSArray *toppings;
 
-- (NSString *)pizzaSize;
-- (NSArray *)pizzaToppings;
+- (NSString *)orderSize;
+- (NSArray *)orderToppings;
+- (NSString *)sizeToString;
 
-- (instancetype)initWithOrder:(NSArray *)order;
+- (instancetype)initWithSize:(PizzaSize)size withToppings:(NSArray *)toppings;
 
 @end

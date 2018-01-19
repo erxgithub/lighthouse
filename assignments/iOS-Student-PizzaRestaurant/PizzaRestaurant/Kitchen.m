@@ -8,33 +8,22 @@
 
 #import "Kitchen.h"
 
-PizzaSize sizeStringToSize(NSString *size) {
+@implementation Kitchen
+
+- (Pizza *)makePizzaWithSize:(NSString *)size toppings:(NSArray *)toppings
+{
+    PizzaSize pizzaSize = [self sizeStringToSize:size];
+    return [[Pizza alloc] initWithSize:pizzaSize withToppings:toppings];
+}
+
+- (PizzaSize)sizeStringToSize:(NSString *)size {
     if ([size.lowercaseString isEqualToString:@"small"]) {
         return PizzaSizeSmall;
     } else if ([size.lowercaseString isEqualToString:@"medium"]) {
         return PizzaSizeMedium;
     } else {
         return PizzaSizeLarge;
-
     }
-}
-
-NSString *sizeToString(PizzaSize size) {
-    switch (size) {
-        case PizzaSizeSmall:
-            return @"small";
-        case PizzaSizeMedium:
-            return @"medium";
-        default:
-            return @"large";
-    }
-}
-
-@implementation Kitchen
-
-- (Pizza *)makePizzaWithSize:(PizzaSize)size toppings:(NSArray *)toppings
-{
-    //return [[Pizza alloc] initWithOrder:<#(NSArray *)#>]
 }
 
 @end

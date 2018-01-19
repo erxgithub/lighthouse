@@ -12,12 +12,11 @@
 
 int main(int argc, const char * argv[])
 {
-
     @autoreleasepool {
         
         NSLog(@"Please pick your pizza size and toppings:");
         
-        Kitchen *restaurantKitchen = [Kitchen new];
+        Kitchen *kitchen = [Kitchen new];
         
         while (TRUE) {
             // Loop forever
@@ -35,16 +34,25 @@ int main(int argc, const char * argv[])
             NSArray *commandWords = [inputString componentsSeparatedByString:@" "];
             
             // And then send some message to the kitchen...
-            PizzaSize size = stringToSize(commandWords.firstObject);
             
+            NSString *size = commandWords.firstObject;
             
-            Pizza *pizza = [[Pizza alloc] initWithOrder:commandWords];
-            NSLog(@"Pizza order: size %@, toppings %@", [pizza pizzaSize], [pizza pizzaToppings]);
-            NSLog(@"%@", pizza.size);
+            if ([size  isEqual: @"quit"]) {
+                break;
+            }
+            
+            NSArray *toppings = [commandWords subarrayWithRange: NSMakeRange( 1, [commandWords count] - 1)];
+
+            Pizza *pizza = [kitchen makePizzaWithSize:size toppings:toppings];
+
+            NSLog(@"Pizza order: size %@, toppings %@", [pizza orderSize], [pizza orderToppings]);
         }
 
     }
     
     return 0;
 }
+
+
+
 

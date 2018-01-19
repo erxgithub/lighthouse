@@ -10,9 +10,6 @@
 
 @implementation Pizza
 
-@synthesize size;
-@synthesize toppings;
-
 - (instancetype)init
 {
     self = [super init];
@@ -22,30 +19,33 @@
     return self;
 }
 
-- (instancetype)initWithOrder:(NSArray *)order
+- (instancetype)initWithSize:(PizzaSize)size withToppings:(NSArray *)toppings
 {
     self = [super init];
     if (self) {
-        size = @"";
-        toppings = [[NSMutableArray alloc] init];
-
-        for (NSString *item in order) {
-            if ([item  isEqual: @"small"]) {
-                size = item;
-            } else {
-                [toppings addObject:item];
-            }
-        }
+        _size = size;
+        _toppings = toppings;
     }
     return self;
 }
 
-- (NSString *)pizzaSize {
-    return size;
+- (NSString *)orderSize {
+    return [self sizeToString];
 }
 
-- (NSArray *)pizzaToppings {
-    return [NSArray arrayWithArray:toppings];
+- (NSArray *)orderToppings {
+    return self.toppings;
+}
+
+- (NSString *)sizeToString {
+    switch (self.size) {
+        case PizzaSizeSmall:
+            return @"small";
+        case PizzaSizeMedium:
+            return @"medium";
+        default:
+            return @"large";
+    }
 }
 
 @end
