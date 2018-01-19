@@ -26,9 +26,23 @@
         _name = name;
         _specialization = specialization;
         
-        _acceptedPatients = [[NSMutableArray alloc] init];
+        _acceptedPatients = [[NSMutableSet alloc] init];
     }
     return self;
+}
+
+- (NSString *)acceptPatient: (Patient *)patient {
+    if ([patient.healthCard length] > 0) {
+        [self.acceptedPatients addObject:patient];
+        return @"patient accepted";
+    } else {
+        return @"healthcard not valid";
+    }
+}
+
+- (NSString *)requestMedication: (NSString *)name symptoms:(NSString *)symptoms {
+    Patient *patient = [self.acceptedPatients valueForKey:name];
+    return patient.healthCard;
 }
 
 @end

@@ -10,6 +10,7 @@
 		580A8F72201112D500FE148A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A8F71201112D500FE148A /* main.m */; };
 		580A8F7A2011132600FE148A /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A8F792011132600FE148A /* Doctor.m */; };
 		580A8F7D2011133C00FE148A /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A8F7C2011133C00FE148A /* Patient.m */; };
+		5841B97F201175480016560E /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5841B97E201175480016560E /* Prescription.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -31,6 +32,8 @@
 		580A8F792011132600FE148A /* Doctor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Doctor.m; sourceTree = "<group>"; };
 		580A8F7B2011133C00FE148A /* Patient.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Patient.h; sourceTree = "<group>"; };
 		580A8F7C2011133C00FE148A /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
+		5841B97D201175480016560E /* Prescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prescription.h; sourceTree = "<group>"; };
+		5841B97E201175480016560E /* Prescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +71,8 @@
 				580A8F7C2011133C00FE148A /* Patient.m */,
 				580A8F782011132600FE148A /* Doctor.h */,
 				580A8F792011132600FE148A /* Doctor.m */,
+				5841B97D201175480016560E /* Prescription.h */,
+				5841B97E201175480016560E /* Prescription.m */,
 			);
 			path = "Patient Doctor";
 			sourceTree = "<group>";
@@ -132,6 +137,7 @@
 				580A8F7D2011133C00FE148A /* Patient.m in Sources */,
 				580A8F7A2011132600FE148A /* Doctor.m in Sources */,
 				580A8F72201112D500FE148A /* main.m in Sources */,
+				5841B97F201175480016560E /* Prescription.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
