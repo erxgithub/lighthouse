@@ -10,9 +10,24 @@
 
 @implementation Footman
 
--(instancetype)init{
-    _healthPoints = 60;
-    return self;
+//-(instancetype)init{
+//    super.healthPoints = 60;
+//    super.attackPower = 10;
+//    return self;
+//}
+
+//- (instancetype)initWithHP:(int)hp AP:(int)ap
+//{
+//    self = [super init];
+//    if (self) {
+//        healthPoints = hp;
+//        attackPower = ap;
+//    }
+//    return self;
+//}
+
+- (void)attack:(Unit *)enemy withDamage:(int)damage {
+    [enemy damage:damage];
 }
 
 @end
