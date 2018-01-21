@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5813892B2012552F00E16D28 /* Cook.m in Sources */ = {isa = PBXBuildFile; fileRef = 5813892A2012552F00E16D28 /* Cook.m */; };
+		58483F86201507AD005301F2 /* AnotherCook.m in Sources */ = {isa = PBXBuildFile; fileRef = 58483F85201507AD005301F2 /* AnotherCook.m */; };
 		8BF87F6E1CDB2B21001943DE /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF87F6D1CDB2B21001943DE /* main.m */; };
 		8BF87F761CDB2B34001943DE /* FoodTruck.m in Sources */ = {isa = PBXBuildFile; fileRef = 8BF87F751CDB2B34001943DE /* FoodTruck.m */; };
 /* End PBXBuildFile section */
@@ -27,6 +28,8 @@
 /* Begin PBXFileReference section */
 		581389292012552F00E16D28 /* Cook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Cook.h; sourceTree = "<group>"; };
 		5813892A2012552F00E16D28 /* Cook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Cook.m; sourceTree = "<group>"; };
+		58483F84201507AD005301F2 /* AnotherCook.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AnotherCook.h; sourceTree = "<group>"; };
+		58483F85201507AD005301F2 /* AnotherCook.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AnotherCook.m; sourceTree = "<group>"; };
 		8BF87F6A1CDB2B21001943DE /* Foodtruck */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Foodtruck; sourceTree = BUILT_PRODUCTS_DIR; };
 		8BF87F6D1CDB2B21001943DE /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		8BF87F741CDB2B34001943DE /* FoodTruck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FoodTruck.h; sourceTree = "<group>"; };
@@ -64,6 +67,8 @@
 			isa = PBXGroup;
 			children = (
 				8BF87F6D1CDB2B21001943DE /* main.m */,
+				58483F84201507AD005301F2 /* AnotherCook.h */,
+				58483F85201507AD005301F2 /* AnotherCook.m */,
 				581389292012552F00E16D28 /* Cook.h */,
 				5813892A2012552F00E16D28 /* Cook.m */,
 				8BF87F741CDB2B34001943DE /* FoodTruck.h */,
@@ -129,6 +134,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8BF87F6E1CDB2B21001943DE /* main.m in Sources */,
+				58483F86201507AD005301F2 /* AnotherCook.m in Sources */,
 				8BF87F761CDB2B34001943DE /* FoodTruck.m in Sources */,
 				5813892B2012552F00E16D28 /* Cook.m in Sources */,
 			);
