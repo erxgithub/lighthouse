@@ -11,7 +11,8 @@
 @interface Prescription : NSObject
 
 @property (nonatomic, strong) NSString *name;
+@property (nonatomic) NSString *medications;
 
-@property (nonatomic) NSMutableSet *prescriptions;
+- (instancetype)initWithName: (NSString *)name withMedications:(NSString *)medications;
 
 @end

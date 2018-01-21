@@ -21,8 +21,10 @@ int main(int argc, const char * argv[]) {
         NSString *accepted = [doctor acceptPatient:patient];
         NSLog(@"%@", accepted);
         
-        NSString *healthCard = [doctor requestMedication:patient.name symptoms:@"none"];
-        NSLog(@"%@", healthCard);
+        NSArray *symptoms = [[NSArray alloc]initWithObjects:@"cough", @"sneezing", @"sore throat", nil];
+        NSLog(@"%@", symptoms);
+        NSString *medication = [doctor requestMedication:patient.name symptoms:symptoms];
+        NSLog(@"%@", medication);
     }
     
     return 0;

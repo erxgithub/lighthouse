@@ -11,6 +11,7 @@
 		580A8F7A2011132600FE148A /* Doctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A8F792011132600FE148A /* Doctor.m */; };
 		580A8F7D2011133C00FE148A /* Patient.m in Sources */ = {isa = PBXBuildFile; fileRef = 580A8F7C2011133C00FE148A /* Patient.m */; };
 		5841B97F201175480016560E /* Prescription.m in Sources */ = {isa = PBXBuildFile; fileRef = 5841B97E201175480016560E /* Prescription.m */; };
+		58B46800201417C600C4C228 /* Prescriptions.m in Sources */ = {isa = PBXBuildFile; fileRef = 58B467FF201417C600C4C228 /* Prescriptions.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -34,6 +35,8 @@
 		580A8F7C2011133C00FE148A /* Patient.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Patient.m; sourceTree = "<group>"; };
 		5841B97D201175480016560E /* Prescription.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prescription.h; sourceTree = "<group>"; };
 		5841B97E201175480016560E /* Prescription.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Prescription.m; sourceTree = "<group>"; };
+		58B467FE201417C600C4C228 /* Prescriptions.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Prescriptions.h; sourceTree = "<group>"; };
+		58B467FF201417C600C4C228 /* Prescriptions.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Prescriptions.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -73,6 +76,8 @@
 				580A8F792011132600FE148A /* Doctor.m */,
 				5841B97D201175480016560E /* Prescription.h */,
 				5841B97E201175480016560E /* Prescription.m */,
+				58B467FE201417C600C4C228 /* Prescriptions.h */,
+				58B467FF201417C600C4C228 /* Prescriptions.m */,
 			);
 			path = "Patient Doctor";
 			sourceTree = "<group>";
@@ -136,6 +141,7 @@
 			files = (
 				580A8F7D2011133C00FE148A /* Patient.m in Sources */,
 				580A8F7A2011132600FE148A /* Doctor.m in Sources */,
+				58B46800201417C600C4C228 /* Prescriptions.m in Sources */,
 				580A8F72201112D500FE148A /* main.m in Sources */,
 				5841B97F201175480016560E /* Prescription.m in Sources */,
 			);

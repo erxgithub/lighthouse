@@ -40,9 +40,27 @@
     }
 }
 
-- (NSString *)requestMedication: (NSString *)name symptoms:(NSString *)symptoms {
-    Patient *patient = [self.acceptedPatients valueForKey:name];
-    return patient.healthCard;
+- (NSString *)requestMedication: (NSString *)name symptoms:(NSArray *)symptoms {
+    Prescriptions *prescriptions = [[Prescriptions alloc] init];
+    NSMutableString *medications = [[NSMutableString alloc] init];
+    
+    NSPredicate *predicate = [NSPredicate predicateWithFormat:@"name == %@", name];
+    Patient *patient = [[[self.acceptedPatients filteredSetUsingPredicate:predicate] allObjects] objectAtIndex:0];
+    
+    if (patient != nil) {
+        for (NSString *symptom in symptoms) {
+            if ([medications length] > 0) {
+                [medications appendString:@", "];
+            }
+            
+            [medications appendString:[prescriptions symptomLookup:symptom]];
+        }
+        
+        Prescription *prescription = [[Prescription alloc] initWithName:name withMedications:medications];
+        [prescriptions addPrescription:prescription];
+    }
+    
+    return medications;
 }
 
 @end

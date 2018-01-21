@@ -10,4 +10,14 @@
 
 @implementation Prescription
 
+- (instancetype)initWithName: (NSString *)name withMedications:(NSString *)medications
+{
+    self = [super init];
+    if (self) {
+        _name = name;
+        _medications = medications;
+    }
+    return self;
+}
+
 @end

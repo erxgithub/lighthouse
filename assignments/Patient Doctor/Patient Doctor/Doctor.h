@@ -8,6 +8,8 @@
 
 #import <Foundation/Foundation.h>
 #import "Patient.h"
+#import "Prescription.h"
+#import "Prescriptions.h"
 
 @interface Doctor : NSObject
 
@@ -16,7 +18,7 @@
 @property (nonatomic, strong) NSMutableSet *acceptedPatients;
 
 - (NSString *)acceptPatient: (Patient *)patient;
-- (NSString *)requestMedication: (NSString *)name symptoms:(NSString *)symptoms;
+- (NSString *)requestMedication: (NSString *)name symptoms:(NSArray *)symptoms;
 
 - (instancetype)initWithName: (NSString *)name withSpecialization: (NSString *)specialization;
 
