@@ -29,4 +29,8 @@
     return self;
 }
 
+- (void)adjustScore: (NSInteger)value {
+    self.score += value;
+}
+
 @end

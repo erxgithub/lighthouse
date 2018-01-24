@@ -147,9 +147,15 @@
         self.resultLabel.text = @"Right!";
     } else {
         self.resultLabel.text = @"Wrong!";
+        if (self.gameModel.playerNo == 1) {
+            [self updatePlayerScore:1 adjustment:-1];
+        } else {
+            [self updatePlayerScore:2 adjustment:-1];
+        }
     }
     
     [self.resultLabel sizeToFit];
+    [self.gameModel switchPlayer];
 }
 
 - (void)clearInput {
@@ -160,6 +166,16 @@
     [self.gameModel generateQuestion];
     self.questionLabel.text = self.gameModel.question;
     self.resultLabel.text = @"";
+}
+
+- (void)updatePlayerScore:(NSInteger) playerNo adjustment:(NSInteger) value {
+    if (self.gameModel.playerNo == 1) {
+        [self.player1 adjustScore:value];
+        self.score1.text = [NSString stringWithFormat:@"%ld", (long)self.player1.score];
+    } else {
+        [self.player2 adjustScore:value];
+        self.score2.text = [NSString stringWithFormat:@"%ld", (long)self.player2.score];
+    }
 }
 
 @end

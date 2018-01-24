@@ -14,5 +14,6 @@
 @property (nonatomic) NSInteger score;
 
 - (instancetype)initWithName: (NSString *)name withScore: (NSInteger)score;
+- (void)adjustScore: (NSInteger)score;
 
 @end
