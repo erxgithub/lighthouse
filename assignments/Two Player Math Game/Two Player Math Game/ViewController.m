@@ -23,6 +23,7 @@
 @property (nonatomic) GameModel *gameModel;
 @property (nonatomic) Player *player1;
 @property (nonatomic) Player *player2;
+@property (weak, nonatomic) IBOutlet UIButton *enterButton;
 
 @end
 
@@ -141,21 +142,47 @@
 }
 
 - (IBAction)buttonE:(id)sender {
-    NSInteger inputNumber = [self.answerLabel.text intValue];
-    
-    if (inputNumber == self.gameModel.answer) {
-        self.resultLabel.text = @"Right!";
-    } else {
-        self.resultLabel.text = @"Wrong!";
-        if (self.gameModel.playerNo == 1) {
-            [self updatePlayerScore:1 adjustment:-1];
+    if ([self.enterButton.titleLabel.text isEqual: @"Enter"]) {
+        NSInteger inputNumber = [self.answerLabel.text intValue];
+        
+        if (inputNumber == self.gameModel.answer) {
+            self.resultLabel.text = @"Right!";
         } else {
-            [self updatePlayerScore:2 adjustment:-1];
+            self.resultLabel.text = @"Wrong!";
+            if (self.gameModel.playerNo == 1) {
+                [self updatePlayerScore:1 adjustment:-1];
+            } else {
+                [self updatePlayerScore:2 adjustment:-1];
+            }
         }
+
+        [self.resultLabel sizeToFit];
+        [self.gameModel switchPlayer];
+        
+        if ([self.score1.text isEqualToString:@"0"] || [self.score2.text isEqualToString:@"0"]) {
+            [self.enterButton setTitle:@"Restart Game" forState:UIControlStateNormal];
+            [self.enterButton setTitle:@"Restart Game" forState:UIControlStateSelected];
+            [self.enterButton setTitle:@"Restart Game" forState:UIControlStateHighlighted];
+        } else {
+            [self.enterButton setTitle:@"New Question" forState:UIControlStateNormal];
+            [self.enterButton setTitle:@"New Question" forState:UIControlStateSelected];
+            [self.enterButton setTitle:@"New Question" forState:UIControlStateHighlighted];
+        }
+    } else if ([self.enterButton.titleLabel.text isEqual: @"New Question"]) {
+        [self clearInput];
+        [self newQuestion];
+        
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateNormal];
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateSelected];
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateHighlighted];
+    } else if ([self.enterButton.titleLabel.text isEqual: @"Restart Game"]) {
+        [self clearInput];
+        [self newQuestion];
+        
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateNormal];
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateSelected];
+        [self.enterButton setTitle:@"Enter" forState:UIControlStateHighlighted];
     }
-    
-    [self.resultLabel sizeToFit];
-    [self.gameModel switchPlayer];
 }
 
 - (void)clearInput {

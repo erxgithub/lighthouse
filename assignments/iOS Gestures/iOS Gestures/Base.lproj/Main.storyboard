@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XHd-an-fC3">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tab Bar Controller-->
+        <scene sceneID="nMY-UR-eyj">
+            <objects>
+                <tabBarController id="XHd-an-fC3" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="VxL-jo-Abh">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="OrK-UW-GqM" kind="relationship" relationship="viewControllers" id="V0C-Hk-vqb"/>
+                        <segue destination="EtF-ub-zPh" kind="relationship" relationship="viewControllers" id="VWm-an-5Do"/>
+                        <segue destination="2wq-5R-rt6" kind="relationship" relationship="viewControllers" id="fZl-5c-zP9"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="oZc-yw-Wx1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-913" y="-278"/>
+        </scene>
+        <!--Pan-->
+        <scene sceneID="XtZ-MW-2bA">
+            <objects>
+                <viewController id="OrK-UW-GqM" customClass="PanViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="cCy-EY-zwR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="dYu-wc-xqz">
+                                <rect key="frame" x="34" y="148" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <gestureRecognizers/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="v6K-6f-BLr" appends="YES" id="K7d-Hh-zW5"/>
+                                </connections>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.75406885150000003" green="0.75408679249999999" blue="0.75407713649999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="SjY-9w-D7F"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pan" image="item1" id="FhV-Gm-tPQ"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KGZ-I9-dj8" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="v6K-6f-BLr">
+                    <connections>
+                        <action selector="redViewPanned:" destination="OrK-UW-GqM" id="Yfq-I4-HuI"/>
+                    </connections>
+                </panGestureRecognizer>
+            </objects>
+            <point key="canvasLocation" x="-153" y="-499"/>
+        </scene>
+        <!--Tap-->
+        <scene sceneID="Pnf-sV-4k6">
+            <objects>
+                <viewController id="EtF-ub-zPh" customClass="TapViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="aZY-jV-TuC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.83234566450000003" blue="0.47320586440000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="BVq-Vh-jFz"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Tap" image="item2" id="Wr2-1t-yxU"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N6e-zT-pZ4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-174" y="190"/>
+        </scene>
+        <!--Pinch-->
+        <scene sceneID="NAw-iE-mFj">
+            <objects>
+                <viewController id="2wq-5R-rt6" customClass="PinchViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="FoR-mM-wr4">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" red="1" green="0.5409764051" blue="0.84731429820000004" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <viewLayoutGuide key="safeArea" id="wgd-iJ-bPp"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Pinch" image="item3" id="LSf-za-bIi"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aHR-b4-Ty0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-173" y="902"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="item1" width="30" height="30"/>
+        <image name="item2" width="30" height="28"/>
+        <image name="item3" width="30" height="28"/>
+    </resources>
+</document>
