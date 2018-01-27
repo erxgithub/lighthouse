@@ -14,7 +14,7 @@
 {
     self = [super init];
     if (self) {
-        _playerNo = 1;
+        _playerNo = 0;
         [self generateQuestion];
     }
     return self;

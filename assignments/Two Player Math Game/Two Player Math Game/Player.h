@@ -13,7 +13,8 @@
 @property (nonatomic) NSString *name;
 @property (nonatomic) NSInteger score;
 
-- (instancetype)initWithName: (NSString *)name withScore: (NSInteger)score;
-- (void)adjustScore: (NSInteger)score;
+- (instancetype)initWithName: (NSString *)name withScore: (NSInteger)value;
+- (void)adjustScore: (NSInteger)value;
+- (void)resetScore: (NSInteger)value;
 
 @end

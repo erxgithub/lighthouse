@@ -19,18 +19,22 @@
     return self;
 }
 
-- (instancetype)initWithName: (NSString *)name withScore: (NSInteger)score
+- (instancetype)initWithName: (NSString *)name withScore: (NSInteger)value
 {
     self = [super init];
     if (self) {
         _name = name;
-        _score = score;
+        _score = value;
     }
     return self;
 }
 
 - (void)adjustScore: (NSInteger)value {
     self.score += value;
+}
+
+- (void)resetScore: (NSInteger)value {
+    self.score = value;
 }
 
 @end
