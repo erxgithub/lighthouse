@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		582FD244201D1A830045F705 /* SwipeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582FD243201D1A830045F705 /* SwipeViewController.m */; };
+		582FD247201D36630045F705 /* RotationViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582FD246201D36630045F705 /* RotationViewController.m */; };
+		582FD24A201D3AAC0045F705 /* EdgeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 582FD249201D3AAC0045F705 /* EdgeViewController.m */; };
 		5897B74B201A9F0000F03849 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897B74A201A9F0000F03849 /* AppDelegate.m */; };
 		5897B74E201A9F0000F03849 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5897B74D201A9F0000F03849 /* ViewController.m */; };
 		5897B751201A9F0000F03849 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5897B74F201A9F0000F03849 /* Main.storyboard */; };
@@ -19,6 +22,12 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		582FD242201D1A830045F705 /* SwipeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SwipeViewController.h; sourceTree = "<group>"; };
+		582FD243201D1A830045F705 /* SwipeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SwipeViewController.m; sourceTree = "<group>"; };
+		582FD245201D36630045F705 /* RotationViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RotationViewController.h; sourceTree = "<group>"; };
+		582FD246201D36630045F705 /* RotationViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RotationViewController.m; sourceTree = "<group>"; };
+		582FD248201D3AAC0045F705 /* EdgeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = EdgeViewController.h; sourceTree = "<group>"; };
+		582FD249201D3AAC0045F705 /* EdgeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = EdgeViewController.m; sourceTree = "<group>"; };
 		5897B746201A9F0000F03849 /* iOS Gestures.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "iOS Gestures.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		5897B749201A9F0000F03849 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		5897B74A201A9F0000F03849 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -72,6 +81,12 @@
 				5897B74C201A9F0000F03849 /* ViewController.h */,
 				5897B74D201A9F0000F03849 /* ViewController.m */,
 				5897B74F201A9F0000F03849 /* Main.storyboard */,
+				582FD248201D3AAC0045F705 /* EdgeViewController.h */,
+				582FD249201D3AAC0045F705 /* EdgeViewController.m */,
+				582FD245201D36630045F705 /* RotationViewController.h */,
+				582FD246201D36630045F705 /* RotationViewController.m */,
+				582FD242201D1A830045F705 /* SwipeViewController.h */,
+				582FD243201D1A830045F705 /* SwipeViewController.m */,
 				5897B76B201AADE200F03849 /* PinchViewController.h */,
 				5897B76C201AADE200F03849 /* PinchViewController.m */,
 				5897B765201AA38900F03849 /* PanViewController.h */,
@@ -159,10 +174,13 @@
 			files = (
 				5897B767201AA38900F03849 /* PanViewController.m in Sources */,
 				5897B76D201AADE200F03849 /* PinchViewController.m in Sources */,
+				582FD24A201D3AAC0045F705 /* EdgeViewController.m in Sources */,
+				582FD247201D36630045F705 /* RotationViewController.m in Sources */,
 				5897B76A201AA39A00F03849 /* TapViewController.m in Sources */,
 				5897B74E201A9F0000F03849 /* ViewController.m in Sources */,
 				5897B759201A9F0000F03849 /* main.m in Sources */,
 				5897B74B201A9F0000F03849 /* AppDelegate.m in Sources */,
+				582FD244201D1A830045F705 /* SwipeViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -10,6 +10,8 @@
 
 @interface TapViewController ()
 
+@property (weak, nonatomic) IBOutlet UIView *colorView;
+
 @end
 
 @implementation TapViewController
@@ -17,6 +19,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    
+    self.colorView.backgroundColor = [UIColor orangeColor];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -33,5 +37,9 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)colorViewTapped:(id)sender {
+    self.colorView.backgroundColor = [self.colorView.backgroundColor isEqual: [UIColor orangeColor]] ? [UIColor purpleColor] : [UIColor orangeColor];
+}
 
 @end
