@@ -18,30 +18,61 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="xgL-WE-yNa" customClass="CustomView">
-                                <rect key="frame" x="46" y="89" width="284" height="535"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xgL-WE-yNa" customClass="CustomView">
+                                <rect key="frame" x="45" y="89" width="285" height="535"/>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="285" id="Ugg-3W-d7a"/>
+                                    <constraint firstAttribute="height" constant="535" id="b9H-I1-wFI"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.borderWidth">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </view>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="7.5" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-XI-qwV">
-                                <rect key="frame" x="128" y="31" width="204" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-OH-GRG">
+                                <rect key="frame" x="45" y="36" width="30" height="30"/>
+                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="iZc-Tj-Yfk"/>
+                                    <constraint firstAttribute="width" constant="30" id="m3M-W6-YKe"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DbP-q1-4f8">
+                                <rect key="frame" x="294" y="35" width="36" height="30"/>
+                                <state key="normal" title="Clear"/>
+                                <connections>
+                                    <action selector="clearView:" destination="BYZ-38-t0r" eventType="touchUpInside" id="LmI-oH-e28"/>
+                                </connections>
+                            </button>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.5" maxValue="11.5" translatesAutoresizingMaskIntoConstraints="NO" id="bMh-XI-qwV">
+                                <rect key="frame" x="98" y="36" width="173" height="31"/>
                                 <connections>
                                     <action selector="colorChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="Syw-dQ-Wal"/>
                                 </connections>
                             </slider>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PTt-OH-GRG">
-                                <rect key="frame" x="46" y="25" width="42" height="41"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
-                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xgL-WE-yNa" secondAttribute="trailing" constant="45" id="1tu-IK-zjl"/>
+                            <constraint firstItem="xgL-WE-yNa" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="8rA-VY-4Jx"/>
+                            <constraint firstItem="DbP-q1-4f8" firstAttribute="leading" secondItem="bMh-XI-qwV" secondAttribute="trailing" constant="25" id="CDg-5V-USM"/>
+                            <constraint firstItem="bMh-XI-qwV" firstAttribute="leading" secondItem="PTt-OH-GRG" secondAttribute="trailing" constant="25" id="CJK-yU-Q0J"/>
+                            <constraint firstItem="xgL-WE-yNa" firstAttribute="top" secondItem="PTt-OH-GRG" secondAttribute="bottom" constant="23" id="Vf2-Y6-KSC"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="xgL-WE-yNa" secondAttribute="bottom" constant="43" id="amC-S6-Bxb"/>
+                            <constraint firstItem="DbP-q1-4f8" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="15" id="cyg-N9-XvI"/>
+                            <constraint firstItem="PTt-OH-GRG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="45" id="eej-GG-5OX"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="DbP-q1-4f8" secondAttribute="trailing" constant="45" id="hoB-ES-OFs"/>
+                            <constraint firstItem="PTt-OH-GRG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="kCc-8F-BWV"/>
+                            <constraint firstItem="bMh-XI-qwV" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="ktK-if-htj"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="colorSelected" destination="PTt-OH-GRG" id="y0I-FV-iOc"/>
                         <outlet property="colorSlider" destination="bMh-XI-qwV" id="YoH-T2-MPb"/>
+                        <outlet property="customView" destination="xgL-WE-yNa" id="Ipz-AR-xtn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

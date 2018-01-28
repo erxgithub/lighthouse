@@ -12,6 +12,9 @@
 
 @property (weak, nonatomic) IBOutlet UIView *colorSelected;
 @property (weak, nonatomic) IBOutlet UISlider *colorSlider;
+@property (weak, nonatomic) IBOutlet CustomView *customView;
+
+@property (nonatomic) NSArray *colorArray;
 
 @end
 
@@ -20,6 +23,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
+    
+    self.colorArray = @[[UIColor blackColor], [UIColor darkGrayColor], [UIColor lightGrayColor], [UIColor brownColor], [UIColor blueColor], [UIColor cyanColor], [UIColor greenColor], [UIColor redColor], [UIColor purpleColor], [UIColor magentaColor], [UIColor orangeColor], [UIColor yellowColor]];
+    
+    self.colorSelected.backgroundColor = self.colorArray[(int)self.colorSlider.value];
+
 }
 
 
@@ -29,10 +37,12 @@
 }
 
 - (IBAction)colorChange:(id)sender {
-    NSArray *colorArray = @[[UIColor blackColor], [UIColor brownColor], [UIColor blueColor], [UIColor greenColor], [UIColor orangeColor], [UIColor redColor], [UIColor yellowColor], [UIColor purpleColor]];
-    
-    self.colorSelected.backgroundColor = colorArray[(int)self.colorSlider.value];
-    
+    self.colorSelected.backgroundColor = self.colorArray[(int)self.colorSlider.value];
+    self.customView.color = self.colorSelected.backgroundColor;
+}
+
+- (IBAction)clearView:(id)sender {
+    [self.customView clear];
 }
 
 @end

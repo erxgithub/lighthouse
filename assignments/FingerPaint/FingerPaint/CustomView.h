@@ -10,6 +10,8 @@
 
 @interface CustomView : UIView
 
+@property (nonatomic) UIColor *color;
+
 - (void)clear;
 
 @end

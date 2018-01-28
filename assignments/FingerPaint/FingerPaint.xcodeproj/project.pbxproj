@@ -14,8 +14,6 @@
 		5892B008201BC71C00EA50C9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5892B006201BC71C00EA50C9 /* LaunchScreen.storyboard */; };
 		5892B00B201BC71C00EA50C9 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892B00A201BC71C00EA50C9 /* main.m */; };
 		5892B013201BC7E700EA50C9 /* CustomView.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892B012201BC7E700EA50C9 /* CustomView.m */; };
-		5892B016201BC82200EA50C9 /* LineSegment.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892B015201BC82200EA50C9 /* LineSegment.m */; };
-		5892B019201BE4DB00EA50C9 /* ColorPicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 5892B018201BE4DB00EA50C9 /* ColorPicker.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,10 +29,6 @@
 		5892B00A201BC71C00EA50C9 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		5892B011201BC7E700EA50C9 /* CustomView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CustomView.h; sourceTree = "<group>"; };
 		5892B012201BC7E700EA50C9 /* CustomView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CustomView.m; sourceTree = "<group>"; };
-		5892B014201BC82200EA50C9 /* LineSegment.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LineSegment.h; sourceTree = "<group>"; };
-		5892B015201BC82200EA50C9 /* LineSegment.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LineSegment.m; sourceTree = "<group>"; };
-		5892B017201BE4DB00EA50C9 /* ColorPicker.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ColorPicker.h; sourceTree = "<group>"; };
-		5892B018201BE4DB00EA50C9 /* ColorPicker.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ColorPicker.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,12 +66,8 @@
 				5892AFFE201BC71C00EA50C9 /* ViewController.h */,
 				5892AFFF201BC71C00EA50C9 /* ViewController.m */,
 				5892B001201BC71C00EA50C9 /* Main.storyboard */,
-				5892B017201BE4DB00EA50C9 /* ColorPicker.h */,
-				5892B018201BE4DB00EA50C9 /* ColorPicker.m */,
 				5892B011201BC7E700EA50C9 /* CustomView.h */,
 				5892B012201BC7E700EA50C9 /* CustomView.m */,
-				5892B014201BC82200EA50C9 /* LineSegment.h */,
-				5892B015201BC82200EA50C9 /* LineSegment.m */,
 				5892B004201BC71C00EA50C9 /* Assets.xcassets */,
 				5892B006201BC71C00EA50C9 /* LaunchScreen.storyboard */,
 				5892B009201BC71C00EA50C9 /* Info.plist */,
@@ -159,10 +149,8 @@
 			files = (
 				5892B000201BC71C00EA50C9 /* ViewController.m in Sources */,
 				5892B013201BC7E700EA50C9 /* CustomView.m in Sources */,
-				5892B016201BC82200EA50C9 /* LineSegment.m in Sources */,
 				5892B00B201BC71C00EA50C9 /* main.m in Sources */,
 				5892AFFD201BC71C00EA50C9 /* AppDelegate.m in Sources */,
-				5892B019201BE4DB00EA50C9 /* ColorPicker.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
