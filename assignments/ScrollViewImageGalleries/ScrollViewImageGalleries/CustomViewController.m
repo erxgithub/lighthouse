@@ -22,14 +22,13 @@
     
     //self.scrollView.translatesAutoresizingMaskIntoConstraints = YES;
     self.scrollView.pagingEnabled = YES;
-    NSLog(@"%@", self.scrollView.leftAnchor);
-    NSLog(@"%@", self.scrollView.leadingAnchor);
 
     // page control
-    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, 424, self.scrollView.frame.size.width, 36)];
-    pageControl.backgroundColor=[UIColor blackColor];
-    pageControl.numberOfPages=3;
+    UIPageControl *pageControl = [[UIPageControl alloc]initWithFrame:CGRectMake(0, self.scrollView.frame.size.height - 36, self.scrollView.frame.size.width, 36)];
+    pageControl.backgroundColor = [UIColor blackColor];
+    pageControl.numberOfPages = 3;
     pageControl.alpha = 0.5;
+    
     //[pageControl addTarget:self action:@selector(pageChanged) forControlEvents:UIControlEventValueChanged];
     
     UIImage *image1 = [UIImage imageNamed:@"Lighthouse"];
@@ -40,16 +39,21 @@
     
     for (int i = 0; i < [images count]; i++) {
         CGFloat xOrigin = i * self.scrollView.frame.size.width;
-        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0,self.scrollView.frame.size.width,self.scrollView.frame.size.height)];
+        UIImageView *imageView = [[UIImageView alloc] initWithFrame:CGRectMake(xOrigin,0, self.scrollView.frame.size.width, self.scrollView.frame.size.height)];
         imageView.contentMode = UIViewContentModeScaleAspectFill;
         imageView.clipsToBounds = YES;
         [imageView setImage:[images objectAtIndex:i]];
         [self.scrollView addSubview:imageView];
     }
 
-    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 3, 768);
+    self.scrollView.contentSize = CGSizeMake(self.scrollView.frame.size.width * 3, self.scrollView.frame.size.height);
+    
     [self.view addSubview:pageControl];
     
+//    NSLayoutConstraint *pageControlLeadingConstraint = [NSLayoutConstraint constraintWithItem:pageControl attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.scrollView attribute:NSLayoutAttributeLeftMargin multiplier:1 constant:20];
+//
+//    [self.view addConstraint:pageControlLeadingConstraint];
+
     self.scrollView.delegate = self;
 }
 

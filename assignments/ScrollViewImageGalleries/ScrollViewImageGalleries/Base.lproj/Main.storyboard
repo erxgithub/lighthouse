@@ -25,10 +25,10 @@
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="9WX-Mr-wcP"/>
-                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="Jiy-pn-KCp"/>
-                            <constraint firstAttribute="bottom" secondItem="GZl-Zf-LoG" secondAttribute="bottom" constant="20" symbolic="YES" id="X1w-vX-pYR"/>
-                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="aFp-py-pUu"/>
+                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="Qp8-wM-8vh"/>
+                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="Set-2E-noQ"/>
+                            <constraint firstAttribute="bottom" secondItem="GZl-Zf-LoG" secondAttribute="bottom" constant="20" symbolic="YES" id="jir-Ai-IN2"/>
+                            <constraint firstItem="GZl-Zf-LoG" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="zN3-Rj-1Iv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
