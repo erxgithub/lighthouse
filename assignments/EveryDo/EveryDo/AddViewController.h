@@ -10,4 +10,8 @@
 
 @interface AddViewController : UIViewController
 
+@property (nonatomic, strong) NSString *taskTitle;
+@property (nonatomic, assign) NSInteger taskPriority;
+@property (nonatomic, strong) NSString *taskDescription;
+
 @end

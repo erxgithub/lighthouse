@@ -107,9 +107,11 @@
 
 - (IBAction)unwindToList:(UIStoryboardSegue *)segue {
     if ([segue.identifier isEqualToString:@"save"]) {
-        //AddViewController *svc = segue.sourceViewController;
-        //NSString *name = svc.name;
-        Todo *newTodo = [[Todo alloc] initWithTitle:@"New task" taskDescription:@"A new task." priorityLevel:4];
+        AddViewController *svc = segue.sourceViewController;
+        NSString *taskTitle = svc.taskTitle;
+        NSInteger taskPriority = svc.taskPriority;
+        NSString *taskDescription = svc.taskDescription;
+        Todo *newTodo = [[Todo alloc] initWithTitle:taskTitle taskDescription:taskDescription priorityLevel:taskPriority];
         [self.objects addObject:newTodo];
         //Todo *newData = [self.objects arrayByAddingObject:newTodo];
         //self.objects = newData;

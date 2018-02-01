@@ -8,7 +8,11 @@
 
 #import "AddViewController.h"
 
-@interface AddViewController ()
+@interface AddViewController () <UITextFieldDelegate, UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextField *taskTitleField;
+@property (weak, nonatomic) IBOutlet UITextField *taskPriorityField;
+@property (weak, nonatomic) IBOutlet UITextView *taskDescriptionField;
 
 @end
 
@@ -34,11 +38,10 @@
 }
 */
 
-
 - (BOOL)shouldPerformSegueWithIdentifier:(NSString *)identifier sender:(id)sender {
-//    if ([identifier isEqualToString:@"save"]) {
-//        return self.name != nil && ![self.name isEqualToString:@""];
-//    }
+    if ([identifier isEqualToString:@"save"]) {
+        return self.taskTitle != nil && ![self.taskTitle isEqualToString:@""];
+    }
     
     return YES;
 }
@@ -52,7 +55,17 @@
 }
 
 - (void)textFieldDidEndEditing:(UITextField *)textField {
-    //self.name = textField.text;
+    if (textField == self.taskTitleField) {
+        self.taskTitle = self.taskTitleField.text;
+    } else if (textField == self.taskPriorityField) {
+        self.taskPriority = [self.taskPriorityField.text integerValue];
+    }
+}
+
+- (void)textViewDidEndEditing:(UITextView *)textView {
+    if (textView == self.taskDescriptionField) {
+        self.taskDescription = [[self.taskDescriptionField textStorage] string];
+    }
 }
 
 @end
