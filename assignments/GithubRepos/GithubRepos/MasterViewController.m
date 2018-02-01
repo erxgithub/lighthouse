@@ -1,16 +1,16 @@
 //
-//  ViewController.m
+//  MasterViewController.m
 //  GithubRepos
 //
 //  Created by Eric Gregor on 2018-02-01.
 //  Copyright © 2018 Eric Gregor. All rights reserved.
 //
 
-#import "ViewController.h"
+#import "MasterViewController.h"
 #import "TableViewCell.h"
 #import "Repo.h"
 
-@interface ViewController ()
+@interface MasterViewController ()
 
 @property NSMutableArray<Repo *> *objects;
 
@@ -18,7 +18,7 @@
 
 @end
 
-@implementation ViewController
+@implementation MasterViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,19 +52,19 @@
             NSString *repoName = repo[@"name"];
             Repo *repo = [[Repo alloc] initWithName:repoName];
             [self.objects addObject:repo];
-            NSLog(@"repo: %@", repo.repoName);
+            //NSLog(@"repo: %@", repo.repoName);
         }
         
         [[NSOperationQueue mainQueue] addOperationWithBlock:^{
             // This will run on the main queue
             [self.tableView reloadData];
         }];
-
+        
         
     }];
     
     [dataTask resume];
-
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -75,7 +75,6 @@
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
 }
-
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.objects.count;
@@ -92,6 +91,15 @@
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {
     // Return NO if you do not want the specified item to be editable.
     return NO;
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"repoShowDetail"]) {
+        DetailViewController *dvc = [segue destinationViewController];
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        Repo *repo = self.objects[indexPath.row];
+        dvc.repo = repo;
+    }
 }
 
 @end

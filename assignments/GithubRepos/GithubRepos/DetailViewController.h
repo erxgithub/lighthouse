@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  DetailViewController.h
 //  GithubRepos
 //
 //  Created by Eric Gregor on 2018-02-01.
@@ -7,9 +7,10 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Repo.h"
 
-@interface ViewController : UIViewController
+@interface DetailViewController : UIViewController
 
+@property (nonatomic)Repo *repo;
 
 @end
-
