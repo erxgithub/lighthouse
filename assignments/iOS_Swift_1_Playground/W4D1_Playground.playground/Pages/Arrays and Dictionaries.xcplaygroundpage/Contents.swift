@@ -19,19 +19,29 @@ myDictionary["Principal"] = 1
  - Experiment:
  Try creating an array and dictionary using `'let'` vs `'var'` then try adding something to them. What do you notice? For the array, you can use a method called 'append' to add something to it.
  */
+let array1 = [1,2,3]
+var array2 = [4,5,6]
+//array1.append(contentsOf: [4])
+array2.append(contentsOf: [7])
 
+let array3 = ["first" : 1, "second" : 2, "third" : 3]
+var array4 = ["fourth" : 4, "fifth" : 5, "sixth" : 6]
+//array3["fourth"] = 4
+array4["seventh"] = 7
 
 /*:
  - Experiment:
  Try creating an empty array with an explicit type `[type]`. What happens when you add a value that isn't the same type?
  */
-
+var array5 = [String]()
+//array5.append(contentsOf: [1])
 
 /*:
  - Experiment:
  Try creating an empty dictionary with an explicit type. `[keyType: valueType]`
  */
-
+var array6 = [String:Int]()
+//array6["first"] = "1"
 
 /*:
  - Experiment:
@@ -43,7 +53,15 @@ myDictionary["Principal"] = 1
  - reverse
  - count
  */
-
+var array = [1,2,3,4,5]
+print(array[2])
+array.append(contentsOf: [6])
+array.remove(at: 1)
+array.insert(2, at: 1)
+//array.removeAll()
+array.reverse()
+print(array)
+print(array.count)
 
 /*:
  - Experiment:
@@ -52,7 +70,10 @@ myDictionary["Principal"] = 1
  - isEmpty
  - count
  */
-
+var arrayDict = ["a":5, "A":6, "b":7]
+arrayDict.removeValue(forKey: "A")
+arrayDict.isEmpty
+arrayDict.count
 
 /*:
  - Callout(Challenge):
@@ -60,7 +81,11 @@ myDictionary["Principal"] = 1
  
     Finally, print out each person's name from the array using their index and string interpolation
 */
-
+var arrayNew = [String]()
+arrayNew.append(contentsOf: ["John", "Karen", "Jane"])
+for index in 0..<arrayNew.count {
+    print("Name at index \(index) is \(arrayNew[index])")
+}
 
 /*:
  - Callout(Challenge):
@@ -74,6 +99,8 @@ myDictionary["Principal"] = 1
  
     On the next line, add this last person's info: Bob - $45000
  */
-
+var arrayNewDict = ["John":50000, "Jane":70000, "Karen":62000]
+arrayNewDict["Bob"] = 45000
+print(arrayNewDict)
 
 //: [Next](@next)

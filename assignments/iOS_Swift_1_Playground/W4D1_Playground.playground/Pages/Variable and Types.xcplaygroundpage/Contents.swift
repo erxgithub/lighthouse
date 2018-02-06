@@ -5,7 +5,7 @@
  
     `print("Hello, world!")`
  */
-
+print("Hello, world!")
 /*:
  ## Variables
 
@@ -21,7 +21,9 @@ students = 7
  Try creating a variable and/or constant for your name, and age.
  What happens if you try to change the value of a constant?
  */
-
+let name = "Eric"
+var age = 56
+age = 50
 
 //: ---
 /*:
@@ -42,7 +44,8 @@ students = 7
   What happens if you try to change the value to a `Double` like 4.1?
  */
 
-var weeksCompleted = 4
+var weeksCompleted = 3
+weeksCompleted = 4
 
 /*:
  As you can see, you don't have to write the type explicitly. Providing a value when you create a constant or variable lets the compiler _infer_ its type. In the example above, the compiler infers that `students` is an integer because its initial value is an integer.
@@ -70,13 +73,14 @@ let explicitDouble: Double = 70
  - Experiment:
  What type are the variables `tipAmount`, and `isOpen`?
  */
+let floatType: Float = 4
 
 var tipAmount = 6.01
-// tipAmount's type is:
+// tipAmount's type is: Double
 
 
 var isOpen = true
-// isOpen's type is:
+// isOpen's type is: Bool
 
 /*:
 Values are never implicitly converted to another type. If you need to convert a value to a different type, explicitly make an instance of the desired type.
@@ -114,6 +118,11 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Make sure your radius is of type `Double`
  */
+import Darwin
+let pi = 3.14
+var radius: Double = 10
+var area = pi * pow(radius, 2)
+print(area)
 
 /*:
  - Callout(Problem 2):
@@ -122,6 +131,10 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: Radius is half the length of the diameter
  */
+var diam: Double = 24
+radius = diam / 2
+var circ = 2 * pi * radius
+print(circ)
 
 /*:
  - Callout(Problem 3):
@@ -130,6 +143,9 @@ Volume of cylinder = pi * radius^2 * height
 /*:
  Hint: You can double-check your answers yourself or on Google... Google has a really easy input mechanism for all three of these formulas if you just search them up.
  */
-
+radius = 5
+var height: Double = 7
+var vol = pi * pow(radius, 2) * height
+print(vol)
 
 //: [Next](@next)

@@ -29,19 +29,27 @@ for i in 2...5 {
  - Experiment:
  What's the difference between `2...5` vs `2..<5`?
  */
-
+// first one is from 2 to 5, second one is from 2 to 4
 
 /*:
  - Experiment:
   Use a ranged for loop to search through the 'pets' array above for the word 'pig' and print out its index.
  */
-
+for index in 0..<pets.count {
+    if pets[index] == "pig" {
+        print("The index is \(index)")
+    }
+}
 
 /*:
  - Experiment:
  Create an array of random numbers of your choosing then make a for loop that adds 1 to each number.
  */
-
+var array = [2, 3, 6, 1, 9, 5]
+for index in 0..<array.count {
+    array[index] += 1
+}
+print(array)
 
 /*:
  - Experiment:
@@ -58,14 +66,19 @@ let interestingNumbers = [
     "Square": [1, 4, 9, 16, 25],
 ]
 var largest = 0
+var smallest = 0
 for (_, numbers) in interestingNumbers {
     for number in numbers {
         if number > largest {
             largest = number
         }
+        if smallest == 0 || number < smallest {
+            smallest = number
+        }
     }
 }
 print(largest)
+print(smallest)
 
 
 /*:
@@ -73,7 +86,14 @@ print(largest)
  Given a number `N`, from 0 to `N`, add up all the odd numbers and print out the result.
  ie: N = 5, 1+3+5 = 9
  */
-
+let n = 10
+var result = 0
+for i in 0...n {
+    if i % 2 != 0 {
+        result += i
+    }
+}
+print(result)
 
 /*:
  - Callout(Challenge):
@@ -89,5 +109,14 @@ print(largest)
  */
 
 let numberArray = [1, 4, 5, 5, 5, 3, 2, 1, 4, 2, 2, 2, 1]
+var freqArray = [Int:Int]()
+for index in 0..<numberArray.count {
+    if freqArray[numberArray[index]] == nil {
+        freqArray[numberArray[index]] = 1
+    } else {
+        freqArray[numberArray[index]]! += 1
+    }
+}
+print(freqArray)
 
 //: [Next](@next)
